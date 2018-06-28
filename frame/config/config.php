@@ -9,4 +9,21 @@ return [
         'charset'=>'utf8',
         'dbname'=>'web'
     ],
+    //设置访问路径,优先级逐渐降低
+    'request_path'=>[
+        '_i'=>'index',
+        '_t'=>'test'
+    ],
+    //不输入路径的时候默认访问的页面
+    'default_index'=>[
+        'index','index','index'
+    ],
+    //设置session的存储方式,默认使用file存储,如何是true就使用redis共享session
+    'sesseion_type'=>[
+        'is_comon'=>true,
+    ],
+    //当一个目录里面的类需要全部被加载的时候,就可以在这里面写上这个目录的名字
+    'dirs'=>[
+        Frame.'/extend'
+    ],
 ];

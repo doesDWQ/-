@@ -16,12 +16,13 @@ class Controller{
         //判断需要加载的模型类文件是否存在,如果存在就自动载入
         $class = CONTROLLER.'Model';
         
-        $path = App.'/model/'.$class.'.php';
+        $path = App.'/'.DIR.'/model/'.$class.'.php';
         
         
         if(file_exists($path)){
             include $path;
             //var_dump(class_exists(IndexModel));die;
+            $class = '\app\\'.DIR.'\model\\'.$class;
             $this->model = new $class();
         }
     }

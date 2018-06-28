@@ -30,12 +30,12 @@ class AutoLoads{
 		//1,将所有的加载函数字符串定义出来
 $fun =<<< heredoc
 		function autoload_{$key}(\$cls){
-		//当含有命名空间的时候需要这一句
-		\$cls = basename(\$cls);
-		\$file = "$dir/{\$cls}.php";
-		if(is_file(\$file)){
-			include \$file;
-		}
+    		//当含有命名空间的时候需要这一句
+    		\$cls = basename(\$cls);
+    		\$file = "$dir/{\$cls}.php";
+    		if(is_file(\$file)){
+    			include \$file;
+    		}
 		}
 heredoc;
 		//1,定义出函数来,这里定义出来的函数实际上是在类的外面的
@@ -50,8 +50,5 @@ heredoc;
 		}
 		
 	}
-	
-	
-	
 	
 }
